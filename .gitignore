@@ -29,4 +29,5 @@ hs_err_pid*
 .factorypath
 target/
 *.iml
+.idea/
 .vscode/
