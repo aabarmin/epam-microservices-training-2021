@@ -17,6 +17,17 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.epam.training</groupId>
+            <artifactId>monolithic-hexagonal-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.training</groupId>
+            <artifactId>monolithic-hexagonal-persistence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.training</groupId>
+            <artifactId>monolithic-hexagonal-web</artifactId>
+        </dependency>
     </dependencies>
 </project>
