@@ -22,6 +22,8 @@
         <module>microservice-service-discovery</module>
         <module>microservice-drugs</module>
         <module>microservice-pharmacies</module>
+        <module>microservice-recipies</module>
+        <module>microservice-delivery</module>
     </modules>
 
     <dependencyManagement>
