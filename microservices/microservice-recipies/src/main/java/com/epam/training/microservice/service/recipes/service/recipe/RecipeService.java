@@ -1,6 +1,7 @@
 package com.epam.training.microservice.service.recipes.service.recipe;
 
 import com.epam.training.microservice.service.recipes.model.Doctor;
+import com.epam.training.microservice.service.recipes.model.OutgoingRecipe;
 import com.epam.training.microservice.service.recipes.model.Recipe;
 import com.epam.training.microservice.service.recipes.model.Recipient;
 import com.epam.training.microservice.service.recipes.repository.RecipeRepository;
@@ -13,6 +14,8 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
+import static com.google.common.base.Preconditions.*;
+
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -22,13 +25,21 @@ public class RecipeService {
     private RecipeRepository recipeRepository;
 
     @Autowired
-    private StreamBridge streamBridge;
+    private OutgoingRecipeService outgoingRecipeService;
+
+//    @Autowired
+//    private StreamBridge streamBridge;
 
     public Recipe save(Recipe recipe) {
-        final Message<Recipe> message = MessageBuilder.withPayload(recipe).build();
-        streamBridge.send("deliveryNotificator-out-0", message);
+//        final Message<Recipe> message = MessageBuilder.withPayload(recipe).build();
+//        streamBridge.send("deliveryNotificator-out-0", message);
 
-        return recipeRepository.save(recipe);
+        final Recipe savedRecipe = recipeRepository.save(recipe);
+
+        final OutgoingRecipe outgoingRecipe = outgoingRecipeService.findOrCreate(savedRecipe);
+        checkArgument(outgoingRecipe != null, "Outgoing recipe wasn't created");
+
+        return savedRecipe;
     }
 
     public Optional<Recipe> find(Doctor doctor,
