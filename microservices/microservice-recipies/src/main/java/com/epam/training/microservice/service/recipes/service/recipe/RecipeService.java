@@ -18,6 +18,7 @@ import static com.google.common.base.Preconditions.*;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RecipeService {
@@ -30,6 +31,7 @@ public class RecipeService {
 //    @Autowired
 //    private StreamBridge streamBridge;
 
+    @Transactional
     public Recipe save(Recipe recipe) {
 //        final Message<Recipe> message = MessageBuilder.withPayload(recipe).build();
 //        streamBridge.send("deliveryNotificator-out-0", message);
