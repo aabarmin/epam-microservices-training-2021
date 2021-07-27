@@ -1,12 +1,14 @@
 rootProject.name = 'microservices-training'
 
 include(':monolithic')
+
 include(':monolithic:monolithic-hexagonal')
 include(':monolithic:monolithic-hexagonal:monolithic-hexagonal-app')
 include(':monolithic:monolithic-hexagonal:monolithic-hexagonal-core')
 include(':monolithic:monolithic-hexagonal:monolithic-hexagonal-persistence')
 include(':monolithic:monolithic-hexagonal:monolithic-hexagonal-web')
 
+include(':monolithic:monolithic-layered')
 
 //
 //include(':monolithic-hexagonal')

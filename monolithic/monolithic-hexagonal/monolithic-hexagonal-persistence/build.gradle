@@ -4,10 +4,10 @@ plugins {
 
 dependencies {
     implementation project(':monolithic:monolithic-hexagonal:monolithic-hexagonal-core')
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.1'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.mapstruct:mapstruct'
     implementation 'com.google.guava:guava'
-    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.1.0"
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding"
     annotationProcessor "org.mapstruct:mapstruct-processor"
 }
 
