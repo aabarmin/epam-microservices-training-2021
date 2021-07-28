@@ -6,9 +6,14 @@ plugins {
     id 'com.epam.training.java-conventions'
 }
 
+bootJar {
+    enabled = true
+    mainClass = 'com.epam.training.service.delivery.DeliveryApplication'
+}
+
 dependencies {
-    implementation project(':delivery-core')
-    implementation project(':delivery-persistence')
+    implementation project(':microservices:microservice-delivery:delivery-persistence')
+    runtimeOnly 'com.h2database:h2:1.4.200'
 }
 
 description = 'delivery-app'
