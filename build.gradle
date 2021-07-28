@@ -4,6 +4,10 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
+jar {
+    enabled = false
+}
+
 allprojects {
     apply plugin: 'java'
 
