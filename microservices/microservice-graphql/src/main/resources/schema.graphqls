@@ -10,8 +10,16 @@ type Author {
     lastName: String,
 }
 
+type Drug {
+    id: Int,
+    name: String,
+    description: String,
+    available: String
+}
+
 type Query {
     allPosts: [Post]!
+    allDrugs: [Drug]!
 }
 
 type Mutation {
