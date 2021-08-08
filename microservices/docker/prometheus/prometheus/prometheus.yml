@@ -6,3 +6,11 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9090']
+
+  - job_name: microservices
+    scrape_interval: 5s
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets:
+        - service-discovery:8080
+        - service-drugs:8080
