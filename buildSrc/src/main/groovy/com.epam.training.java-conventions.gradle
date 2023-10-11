@@ -1,21 +1,23 @@
 plugins {
     id 'java-library'
     id 'idea'
+    id 'io.spring.dependency-management'
 }
 
 group = 'com.epam.training'
 version = '1.0-SNAPSHOT'
 
-sourceCompatibility = JavaLanguageVersion.of(11)
-targetCompatibility = JavaLanguageVersion.of(11)
+java {
+    sourceCompatibility = '21'
+}
 
 repositories {
     mavenCentral()
 }
 
 ext {
-    set('springCloudVersion', "2020.0.3")
-    set('springStateMachineVersion', '3.0.1')
+    set('springCloudVersion', "2022.0.4")
+    set('springStateMachineVersion', '3.2.1')
 }
 
 dependencyManagement {
